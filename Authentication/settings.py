@@ -28,7 +28,8 @@ SECRET_KEY = os.getenv("SECRET_KEY", "your-default-secret-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
 
 

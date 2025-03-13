@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
-from django.core.wsgi import get_wsgi_application
+# from django.core.wsgi import get_wsgi_application
 from pathlib import Path
 
 
@@ -28,10 +28,12 @@ SECRET_KEY = os.getenv("SECRET_KEY", "your-default-secret-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = True
 
 
-ALLOWED_HOSTS = ['your-app-name.onrender.com', 'localhost']
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.x.x']
+
 
 
 
@@ -125,8 +127,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
+
 
 
 # Default primary key field type

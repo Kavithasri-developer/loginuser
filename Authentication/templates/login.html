@@ -1,0 +1,38 @@
+{% load static %}   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    
+</head>
+<body>
+    <div class="login-container">
+    <h2>login</h2>
+
+    {% for message in messages %}
+    <p style="color: red;">{{message}}</p>
+    {% endfor %}
+    <form method="POST">
+        {%csrf_token%}
+
+
+        <label>username:</label>
+        <input type="text" name="username"  required><br><br>
+
+        <label>Password:</label>
+        <input type="password" name="password" required><br><br>
+
+        <button type="submit">Login</button>
+
+
+
+    </form>
+    <a href="{% url 'register' %}">Don't have an account? Register Here</a>
+
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp - AuthMaster</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+   <div class="container">
+        <h2 class="form-title">User Signup</h2>  
+        <form id="signupForm" action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            
+            <label>Username:</label>
+            <input type="text" name="username" required><br><br>
+    
+            <label>Email:</label>
+            <input type="email" name="email" required><br><br>
+    
+            <label>Password:</label>
+            <input type="password" name="password" required><br><br>
+    
+            <label>Confirm Password:</label>
+            <input type="password" name="confirm_password" required><br><br>
+    
+            <label>Gender:</label>
+            <select name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select><br><br>
+    
+            <input type="checkbox" name="terms" required>
+            <label>I agree to the <a href="" target="_blank">Terms & Conditions</a></label><br><br>
+    
+            <button type="submit">Sign Up</button>
+        </form>
+        
+        <a href="{% url 'login' %}">Already have an account? Login Here</a>
+    </div>
+    
+  
+   
+    
+</body>
+</html>

@@ -41,17 +41,27 @@ input {
 input::placeholder {
     color: rgba(255, 255, 255, 0.7);
 }
-input[type="checkbox"] {
-    transform: scale(1.2); /* Make it slightly bigger */
+/* input[type="checkbox"] {
+    transform: scale(1.2); 
     vertical-align: middle;
     margin-right: 5px;
 
+} */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8px; 
+}
+.checkbox-container input[type="checkbox"] {
+    transform: scale(1.2);
+    margin: 0;
 }
 
 
 button {
-    background-color: #ffffff; /* Current */
-    color: #6a11cb; /* Light purple */
+    background-color: #ffffff; 
+    color: #6a11cb; 
     font-weight: bold;
     border: none;
     padding: 10px 20px;
@@ -65,7 +75,6 @@ button:hover {
 }
 
 
-/* Link Styling */
 a {
     text-decoration: none;
     color: #fff;
